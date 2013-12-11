@@ -49,7 +49,7 @@
     <junit>
       <classpath refid="project.classpath" />
       <formatter type="brief" usefile="false" />
-      <test name="src.ConversionImplTest" />
+      <test name="ConversionImplTest" />
     </junit>
   </target>
 </project>
