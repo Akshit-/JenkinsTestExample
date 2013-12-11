@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+import junit.framework.TestCase;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
- * @author Chris Chrysostom
+ * @author Akshit
  */
-public class ConversionImplTest {
+public class ConversionImplTest extends TestCase{
     
     public ConversionImplTest() {
     }
