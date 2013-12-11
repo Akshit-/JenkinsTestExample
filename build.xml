@@ -7,7 +7,6 @@
     
     <project basedir="." default="build" name="JenkinsTest">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../eclipse"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -38,9 +37,11 @@
 
     <target depends="init" name="build">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+    <javac debug="true" debuglevel="${debuglevel}" destdir="bin" 
+          source="${source}" target="${target}" 
+          classpathref="project.classpath" includeantruntime="false">
       <src path="${src.dir}"/>
-            <classpath refid="project.classpath"/>
+
         </javac>
     </target>
     <!-- run test cases -->
