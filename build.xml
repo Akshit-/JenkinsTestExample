@@ -13,6 +13,7 @@
   <property name="build.dir"     value="bin"/>
   <property name="src.dir"       value="src"/>
   <property name="lib.dir"       value="libs"/>
+  <property name="reports.dir" 		value="reports/" />
   <property name="project.file"      value="project.jar"/>
   <!-- path to libraries-->
   <path id="external.jars">
@@ -33,6 +34,8 @@
     </target>
     <target name="clean">
     <delete dir="${build.dir}"/>
+    <delete file="${project.file}" />
+	<delete dir="${reports}" />
     </target>
     <target depends="clean" name="cleanall"/>
 
