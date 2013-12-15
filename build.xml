@@ -34,7 +34,7 @@
     </target>
     <target name="clean">
     <delete dir="${build.dir}"/>
-    <delete file="${project.file}" />
+    
 	<delete dir="${reports}" />
     </target>
     <target depends="clean" name="cleanall"/>
