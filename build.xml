@@ -54,7 +54,7 @@
   <target name="build-jar" depends="build">
     <delete file="${project.file}" />
 
-    <jar destfile="${project.file}" basedir="${build.dir}" 
+    <jar destfile="${project.file}" basedir="${build.dir}">
       <fileset dir="${build.dir}" includes="**/*.class" />
       <zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />
     </jar>
