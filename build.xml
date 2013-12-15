@@ -13,6 +13,7 @@
   <property name="build.dir"     value="bin"/>
   <property name="src.dir"       value="src"/>
   <property name="lib.dir"       value="libs"/>
+  <property name="project.file"      value="project.jar"/>
   <!-- path to libraries-->
   <path id="external.jars">
     <fileset dir="${lib.dir}" includes="**/*.jar"/>
@@ -45,11 +46,26 @@
         </javac>
     </target>
     <!-- run test cases -->
+
+    <!-- build jar -->
+  <target name="build-jar" depends="build">
+    <delete file="${project.file}" />
+
+    <jar destfile="${project.file}" basedir="${build.dir}" 
+      <fileset dir="${build.dir}" includes="**/*.class" />
+      <zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />
+    </jar>
+  </target>
   <target name="test" depends="build">
-    <junit>
+        <junit printsummary="yes">
       <classpath refid="project.classpath" />
-      <formatter type="brief" usefile="false" />
-      <test name="ConversionImplTest" />
+      <formatter type="xml" />
+      
+      <batchtest fork="yes" todir="${reports.dir}">
+      	<fileset dir="${src.dir}">
+		<include name="**/ConversionImplTest.java"/>
+	</fileset>
+      </batchtest>
     </junit>
   </target>
 </project>
